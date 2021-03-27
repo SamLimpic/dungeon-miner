@@ -36,16 +36,81 @@ button {
 }
 
 .bg-main {
-    background-image: url(./Assets/backgrounds/main-bg.png);
-    background-size: auto;
-    background-position: top;
+    background: url(./Assets/Backgrounds/main-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:top;
+    overflow: hidden;
 }
 
-.bg-shop {
-    background: url(./Assets/backgrounds/shop-bg.png) no-repeat center center;
+.bg-shop-1 {
+    background: url(./Assets/Backgrounds/shop-1-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-shop-2 {
+    background: url(./Assets/Backgrounds/shop-2-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
     height: 100%;
     overflow: hidden;
 }
 
+.bg-shop-3 {
+    background: url(./Assets/Backgrounds/shop-3-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-boss-1 {
+    background: url(./Assets/Backgrounds/boss-1-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-boss-2 {
+    background: url(./Assets/Backgrounds/boss-2-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-boss-3 {
+    background: url(./Assets/Backgrounds/boss-3-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.battle-card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.buff {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
