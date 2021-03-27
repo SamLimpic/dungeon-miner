@@ -23,16 +23,15 @@
     <title>Dunegon Miner</title>
 </head>
 
-<body class="bg-main bg-dark">
+<body id="body" class="bg-main section-border">
 
     <header class="container-fluid m-3">
-        <div id="welcome" class="row justify-content-between hidden">
-            <!-- WELCOME BUTTON-->
-            <div class="col-5">
+        <!-- WELCOME MESSAGE SECTION  -->
+        <div class="row justify-content-between">
+            <div id="welcome-header" class="col-5 ">
                 <h1 class="text-secondary">DUNGEON MINER</h1>
                 <h3>Mighty rewards await those bold enough to enter here...</h3>
                 <h3>Yet beware that ye do not go too quickly, nor delve too deep...</h3>
-
                 <div class="btn-group">
                     <button class="btn btn-secondary btn-lg dropdown-toggle text-dark w-100 m-3" type="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,74 +47,79 @@
 
             </div>
         </div>
-        </div>
-
     </header>
 
     <main>
-        <section id="shop-1" class="container card shadow bg-shop-1 section-border h-100 p-3 hidden">
-            <div class="row justify-content-center m-3">
-                <div class="col bg-dark card shadow text-warning text-center">
-                    <h1 class="py-2"><u>Greetings Adventurer!</u></h1>
-                    <h3 class="py-2">What equipment do you require?</h3>
+        <section id="new-game" class="container card shadow bg-main section-border h-100 p-3 hidden">
+            <div class="row justify-content-start align-items-center m-2 mx-3 pt-5">
+                <div class="col-4 bg-dark card shadow text-warning text-center">
+                    <h4 class="py-2"><u>Welcome Adventurer!</u></h4>
+                    <form>
+                        <div class="form-group">
+                            <div class="my-2 mx-5">
+                                <input type="text" class="form-control text-center" id="inputName"
+                                    placeholder="ADVENTURER">
+                            </div>
+
+                        </div>
+                        <fieldset class="form-group">
+                            <legend class="col-form-label text-center">
+                                <h5><u> Your Level </u></h5>
+                            </legend>
+                            <div class="text-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="level" id="level1"
+                                        value="option1" onclick="levelOne()">
+                                    <label class="form-check-label" for="level1">
+                                        Level 1
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="level" id="level2"
+                                        value="option2" onclick="levelTwo()">
+                                    <label class="form-check-label" for="level2">
+                                        Level 2
+                                    </label>
+                                </div>
+                                <div class="form-check disabled">
+                                    <input class="form-check-input" type="radio" name="level" id="level3"
+                                        value="option3" onclick="levelThree()">
+                                    <label class="form-check-label" for="level3">
+                                        Level 3
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
-            <div class="row justify-content-end mt-4 mx-1 mb-3 text-warning text-center">
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Rusty Sword </u></p>
-                    <img class="p-1" src="./Assets/Weapons/sword-1.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-1.png" alt="">
-                    <p>Improves Attack</p>
+            <div class="row justify-content-start m-3 my-5">
+                <div class="col-4">
+                    <div class="">
+                        <button id="start" type="submit" class="btn btn-warning btn-lg text-dark mt-3"
+                            onclick="startGame(`${playerLevel}`)" disabled>START YOUR ADVENTURE!</button>
+                    </div>
                 </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Leather Armor </u></p>
-                    <img class="p-1" src="./Assets/Armor/armor-1.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-1.png" alt="">
-                    <p>Improves Health</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- #region SHOPS SECTION -->
+        <section id="shop-1" class="container card shadow bg-shop-1 section-border h-100 p-3 hidden">
+            <div class="row justify-content-center m-2">
+                <div class="col bg-dark card shadow text-warning text-center">
+                    <h1 class="py-2"><u>Greetings Adventurer!</u></h1>
+                    <h3 id="welcome-message" class="py-2">What equipment do you require?</h3>
                 </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Fish Bones </u></p>
-                    <img class="p-1" src="./Assets/Food/food-1.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-1.png" alt="">
-                    <p>Improves Special</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Tiny Minion </u></p>
-                    <img class="p-1" src="./Assets//Minions/minion-1-card.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-1.png" alt="">
-                    <p>Passive Attack</p>
-                </div>
+            </div>
+            <div class="shop row justify-content-end mx-1 my-4 text-warning text-center">
             </div>
         </section>
 
         <section id="shop-2" class="container card shadow bg-shop-2 section-border h-100 p-3 hidden">
-            <div class="row justify-content-end mx-1 text-warning text-center m-3">
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Shiny Cutlass</u></p>
-                    <img class="p-1" src="./Assets/Weapons/sword-2.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-2.png" alt="">
-                    <p>Improves Attack</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Steel Armor </u></p>
-                    <img class="p-1" src="./Assets/Armor/armor-2.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-2.png" alt="">
-                    <p>Improves Health</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Fresh Bread </u></p>
-                    <img class="p-1" src="./Assets/Food/food-2.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-2.png" alt="">
-                    <p>Improves Special</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Hardy Minion </u></p>
-                    <img class="p-1" src="./Assets//Minions/minion-2-card.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-2.png" alt="">
-                    <p>Passive Attack</p>
-                </div>
+            <div class="shop row justify-content-end mx-1 text-warning text-center m-3">
             </div>
-            <div class="row justify-content-center m-3">
+            <div class="row justify-content-center m-2">
                 <div class="col bg-dark card shadow text-warning text-center mb-5">
                     <h1 class="py-2"><u>Greetings Adventurer</u></h1>
                     <h3 class="py-2">What may I offer you...?</h3>
@@ -124,40 +128,18 @@
         </section>
 
         <section id="shop-3" class="container card shadow bg-shop-3 section-border h-100 p-3 hidden">
-            <div class="row justify-content-center m-3">
+            <div class="row justify-content-center m-2">
                 <div class="col bg-dark card shadow text-warning text-center">
                     <h1 class="py-2"><u>What?! An Adventurer?!</u></h1>
                     <h3 class="py-2">What do you want?!</h3>
                 </div>
             </div>
-            <div class="row justify-content-end mt-4 mx-1 mb-3 text-warning text-center">
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Jeweled Sword </u></p>
-                    <img class="p-1" src="./Assets/Weapons/sword-3.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-3.png" alt="">
-                    <p>Improves Attack</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Plate Armor </u></p>
-                    <img class="p-1" src="./Assets/Armor/armor-3.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-3.png" alt="">
-                    <p>Improves Health</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Roast Mutton </u></p>
-                    <img class="p-1" src="./Assets/Food/food-3.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-3.png" alt="">
-                    <p>Improves Special</p>
-                </div>
-                <div class="col-2 card shadow bg-dark pt-2 mx-2">
-                    <p><u> Mighty Minion </u></p>
-                    <img class="p-1" src="./Assets//Minions/minion-3-card.png" alt="">
-                    <img class="p-1 icon" onclick="buy()" src="./Assets/Money/money-3.png" alt="">
-                    <p>Passive Attack</p>
-                </div>
+            <div class="shop row justify-content-end mt-4 mx-1 mb-3 text-warning text-center">
             </div>
         </section>
+        <!-- #endregion SECTION -->
 
+        <!-- #region BOSSES SECTION -->
         <section id="boss-1" class="container card shadow bg-boss-1 section-border h-100 p-3 hidden">
             <div class="row justify-content-around  align-items-center m-3">
                 <div class="col-5 bg-dark card shadow text-warning text-center">
@@ -201,17 +183,13 @@
                 </div>
                 <div class="col-5">
                     <div class="row justify-content-around">
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Weapons/sword-1.png" alt="">
+                        <div class="col-8">
+                            <button class="bg-warning text-dark pl-2 pt-2 mt-2">
+                                <h1><strong>ATTACK</strong></h1>
+                            </button>
                         </div>
                         <div class="col-3">
-                            <img class="buff" src="./Assets/Armor/armor-1.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Food/food-1.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Loot/loot-1.png" alt="">
+                            <img class="buff" src="./Assets/Info-Cards/info.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -272,17 +250,13 @@
                 </div>
                 <div class="col-5">
                     <div class="row justify-content-around">
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Weapons/sword-2.png" alt="">
+                        <div class="col-8">
+                            <button class="bg-warning text-dark pl-2 pt-2 mt-2">
+                                <h1><strong>ATTACK</strong></h1>
+                            </button>
                         </div>
                         <div class="col-3">
-                            <img class="buff" src="./Assets/Armor/armor-2.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Food/food-2.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Loot/loot-2.png" alt="">
+                            <img class="buff" src="./Assets/Info-Cards/info.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -300,7 +274,7 @@
             </div>
         </section>
 
-        <section id="boss-3" class="container card shadow bg-boss-3 section-border h-100 p-3 ">
+        <section id="boss-3" class="container card shadow bg-boss-3 section-border h-100 p-3 hidden">
             <div class="row justify-content-around  align-items-center m-3">
                 <div class="col-5 bg-dark card shadow text-warning text-center">
                     <h3 class="py-2"><u>Adventurer</u></h3>
@@ -343,17 +317,13 @@
                 </div>
                 <div class="col-5">
                     <div class="row justify-content-around">
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Weapons/sword-3.png" alt="">
+                        <div class="col-8">
+                            <button class="bg-warning text-dark pl-2 pt-2 mt-2">
+                                <h1><strong>ATTACK</strong></h1>
+                            </button>
                         </div>
                         <div class="col-3">
-                            <img class="buff" src="./Assets/Armor/armor-3.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Food/food-3.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Loot/loot-3.png" alt="">
+                            <img class="buff" src="./Assets/Info-Cards/info.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -370,21 +340,23 @@
                 </div>
             </div>
         </section>
-
+        <!-- #endregion SECTION -->
     </main>
 
     <footer class="container-fluid">
-        <div id="welcome" class="row justify-content-center">
-            <div class=" col">
-                <h5 class="text-secondary text-center">
-                    Created with <large><i class="fas fa-scroll"></i></large> by Samwise
+        <!-- STATS BAR SECTION -->
+        <div class="row justify-content-center pt-1">
+            <div class="col">
+                <h5 id="stats" class="text-secondary text-center hidden">
+                    <u>Gold</u>: `${player.gold}` || <u>Level</u>: `${player.level}`
                 </h5>
             </div>
         </div>
-        <div id="stats" class="row justify-content-center hidden">
+        <!-- WELCOME MESSAGE SECTION -->
+        <div id="welcome-footer" class="row justify-content-center">
             <div class=" col">
                 <h5 class="text-secondary text-center">
-                    Gold: `${player.gold}` || Level: `${player.level}`
+                    Created with <large><i class="fas fa-scroll"></i></large> by Samwise
                 </h5>
             </div>
         </div>
