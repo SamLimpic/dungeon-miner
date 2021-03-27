@@ -1,0 +1,51 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+footer {
+   position:absolute;
+   bottom:0;
+   height: 5vh;
+   width:100%;
+}
+
+main {
+    height: 85vh;
+}
+
+button {
+    font-family: inherit;
+}
+
+.hidden {
+    display: none;
+}
+
+.section-border {
+    border: 10px;
+    border-color: var(--secondary);
+    border-style: solid;
+    border-radius: 1%;
+}
+
+.o-100 {
+    opacity: 100%;
+}
+
+.bg-main {
+    background-image: url(./Assets/backgrounds/main-bg.png);
+    background-size: auto;
+    background-position: top;
+}
+
+.bg-shop {
+    background: url(./Assets/backgrounds/shop-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:top;
+    height: 100%;
+    overflow: hidden;
+}
+

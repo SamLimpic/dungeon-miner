@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Dunegon Miner</title>
+</head>
+
+<body class="bg-main">
+
+    <header class="container-fluid mb-5">
+        <div class="row justify-content-between">
+            <!-- WELCOME BUTTON-->
+            <div id="welcome" class="col6 hidden">
+                <h1 class="text-secondary">DUNGEON MINER</h1>
+                <h3>Mighty rewards await those <br>bold enough to enter... <br>Yet beware that ye do not <br>too quickly
+                    delve
+                    too deep...</h3>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-lg dropdown-toggle text-dark w-100 m-3" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong>ENTER</strong>
+                    </button>
+                    <div class="dropdown-menu bg-dark">
+                        <a class="dropdown-item text-secondary" onclick="newGame()">NEW GAME</a>
+                        <a class="dropdown-item text-secondary" onclick="">SAVE 1</a>
+                        <a class="dropdown-item text-secondary" onclick="">SAVE 2</a>
+                        <a class="dropdown-item text-secondary" onclick="">SAVE 3</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="container card shadow bg-shop section-border h-100">
+            <div class="row justify-content-center p-5">
+                <div class="col bg-dark card shadow text-warning text-center">
+                    <h1 class="py-2"><u>GREETINGS ADVENTURER!</u></h1>
+                    <h3 class="py-2">WHAT EQUIPMENT DO YOU REQUIRE?</h3>
+                </div>
+            </div>
+            <div id="shop" class="row justify-content-around mx-5 mb-5 text-warning text-center hidden">
+                <div class="col-3 card shadow bg-dark p-3">
+                    <h4><u> WEAPONS </u></h4>
+                    <img class="p-3" src="//placehold.it/200x200" alt="">
+                    <h5>Improves Attack</h5>
+                </div>
+                <div class="col-3 card shadow bg-dark p-3">
+                    <h4><u> ARMOR </u></h4>
+                    <img class="p-3" src="//placehold.it/200x200" alt="">
+                    <h5>Improves Health</h5>
+                </div>
+                <div class="col-3 card shadow bg-dark p-3">
+                    <h4><u> LIBATIONS </u></h4>
+                    <img class="p-3" src="//placehold.it/200x200" alt="">
+                    <h5>Improves Special</h5>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="container-fluid">
+        <div class="row justify-content-center">
+            <div class=" col-md-6">
+                <h5 class="text-secondary text-center">
+                    Created with <large><i class="fas fa-scroll"></i></large> by Samwise
+                </h5>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
