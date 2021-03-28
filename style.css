@@ -31,6 +31,20 @@ button {
     border-radius: 1%;
 }
 
+.win-border {
+    border: 15px;
+    border-color: var(--warning);
+    border-style: solid;
+    border-radius: 1%;
+}
+
+.icon-border {
+    border: 3px;
+    border-color: var(--secondary);
+    border-style: solid;
+    border-radius: 1%;
+}
+
 .o-100 {
     opacity: 100%;
 }
@@ -42,7 +56,7 @@ button {
     overflow: hidden;
 }
 
-.bg-main-1 {
+.bg-main-0 {
     background: url(./Assets/Backgrounds/main-1-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
@@ -60,6 +74,14 @@ button {
     background: url(./Assets/Backgrounds/main-3-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
+    overflow: hidden;
+}
+
+.bg-shop-0 {
+    background: url(./Assets/Backgrounds/shop-0-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -81,6 +103,14 @@ button {
 
 .bg-shop-3 {
     background: url(./Assets/Backgrounds/shop-3-bg.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-boss-0 {
+    background: url(./Assets/Backgrounds/boss-0-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -120,6 +150,7 @@ button {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    display: pointer;
 }
 
 .tiny-icon {
@@ -141,4 +172,8 @@ button {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+}
+
+.no-select {
+  user-select: none;
 }

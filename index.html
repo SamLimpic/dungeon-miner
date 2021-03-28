@@ -32,24 +32,18 @@
                 <h1 class="text-secondary">DUNGEON MINER</h1>
                 <h3>Mighty rewards await those bold enough to enter here...</h3>
                 <h3>Yet beware that ye do not go too quickly, nor delve too deep...</h3>
-                <div class="btn-group">
-                    <button class="btn btn-secondary btn-lg dropdown-toggle text-dark w-100 m-3" type="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <strong>ENTER</strong>
-                    </button>
-                    <div class="dropdown-menu bg-dark">
-                        <a class="dropdown-item text-secondary" onclick="newGame()">NEW GAME</a>
-                        <a class="dropdown-item text-secondary" onclick="">SAVE 1</a>
-                        <a class="dropdown-item text-secondary" onclick="">SAVE 2</a>
-                        <a class="dropdown-item text-secondary" onclick="">SAVE 3</a>
+                <div class="row">
+                    <div class="col-4">
+                        <button class="btn btn-warning btn-lg text-dark w-100 m-3" type="button" onclick="newGame()">
+                            <strong>ENTER</strong>
+                        </button>
                     </div>
                 </div>
-
             </div>
         </div>
     </header>
 
-    <main>
+    <main class="no-select">
         <section id="new-game" class="container card shadow bg-main section-border h-100 p-3 hidden">
             <div class="row justify-content-start align-items-center m-2 mx-3 pt-5">
                 <div class="col-4 bg-dark card shadow text-warning text-center">
@@ -60,7 +54,6 @@
                                 <input type="text" class="form-control text-center" id="inputName"
                                     placeholder="ADVENTURER">
                             </div>
-
                         </div>
                         <fieldset class="form-group">
                             <legend class="col-form-label text-center">
@@ -69,21 +62,21 @@
                             <div class="text-center">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="level" id="level1"
-                                        value="option1" onclick="levelOne()">
+                                        value="option1" onclick="startLevel(1)">
                                     <label class="form-check-label" for="level1">
                                         Level 1
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="level" id="level2"
-                                        value="option2" onclick="levelTwo()">
+                                        value="option2" onclick="startLevel(2)">
                                     <label class="form-check-label" for="level2">
                                         Level 2
                                     </label>
                                 </div>
                                 <div class="form-check disabled">
                                     <input class="form-check-input" type="radio" name="level" id="level3"
-                                        value="option3" onclick="levelThree()">
+                                        value="option3" onclick="startLevel(3)">
                                     <label class="form-check-label" for="level3">
                                         Level 3
                                     </label>
@@ -104,34 +97,79 @@
             </div>
         </section>
 
-        <!-- #region SHOPS SECTION -->
-        <section id="shop-1" class="container card shadow bg-shop-1 section-border h-100 p-3 hidden">
+        <section id="win-game" class="container card shadow bg-main win-border h-100 p-3 hidden">
+            <div id="win" class="row justify-content-end mx-1 my-4 text-warning text-center"></div>
             <div class="row justify-content-center m-2">
                 <div class="col bg-dark card shadow text-warning text-center">
-                    <h1 class="py-2"><u>Greetings Adventurer!</u></h1>
-                    <h3 id="welcome-message" class="py-2">What equipment do you require?</h3>
+                    <h2 class="py-2"><u>Congratulations Adventurer!</u></h2>
+                    <h4 class="py-2">You've bested the dungeon's foul minions!</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- #region SHOPS SECTION -->
+        <section id="shop-1" class="container card shadow bg-shop-0 section-border h-100 p-3 hidden">
+            <div class="row justify-content-center m-2">
+                <div class="col-10 bg-dark card shadow text-warning text-center">
+                    <h1 class="py-2"><u>You're a strong one!</u></h1>
+                    <h3 id="shop-message" class="py-2">Take what you want and go!</h3>
+                </div>
+                <div class="col-2">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/battle.png" alt=""
+                        onclick="toBattle(1)">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/flee.png" alt=""
+                        onclick="toBattle(0)">
                 </div>
             </div>
             <div class="shop row justify-content-end mx-1 my-4 text-warning text-center">
             </div>
         </section>
 
+        <!-- <section id="shop-1" class="container card shadow bg-shop-1 section-border h-100 p-3 hidden">
+            <div class="row justify-content-center m-2">
+                <div class="col-10 bg-dark card shadow text-warning text-center">
+                    <h1 class="py-2"><u>Greetings Adventurer!</u></h1>
+                    <h3 id="shop-message" class="py-2">What tools do you require?</h3>
+                </div>
+                <div class="col-2">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/battle.png" alt=""
+                        onclick="toBattle(1)">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/flee.png" alt=""
+                        onclick="toBattle(0)">
+                </div>
+            </div>
+            <div class="shop row justify-content-end mx-1 my-4 text-warning text-center">
+            </div>
+        </section> -->
+
         <section id="shop-2" class="container card shadow bg-shop-2 section-border h-100 p-3 hidden">
             <div class="shop row justify-content-end mx-1 text-warning text-center m-3">
             </div>
             <div class="row justify-content-center m-2">
-                <div class="col bg-dark card shadow text-warning text-center mb-5">
+                <div class="col-10 bg-dark card shadow text-warning text-center mb-5">
                     <h1 class="py-2"><u>Greetings Adventurer</u></h1>
-                    <h3 class="py-2">What may I offer you...?</h3>
+                    <h3 id="shop-message" class="py-2">What may I offer you...?</h3>
+                </div>
+                <div class="col-2">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/battle.png" alt=""
+                        onclick="toBattle(2)">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/flee.png" alt=""
+                        onclick="toBattle(1)">
                 </div>
             </div>
         </section>
 
         <section id="shop-3" class="container card shadow bg-shop-3 section-border h-100 p-3 hidden">
             <div class="row justify-content-center m-2">
-                <div class="col bg-dark card shadow text-warning text-center">
-                    <h1 class="py-2"><u>What?! An Adventurer?!</u></h1>
-                    <h3 class="py-2">What do you want?!</h3>
+                <div class="col-10 bg-dark card shadow text-warning text-center">
+                    <h1 class="py-2"><u>What, an Adventurer?!</u></h1>
+                    <h3 id="shop-message" class="py-2">What do you want?!</h3>
+                </div>
+                <div class="col-2">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/battle.png" alt=""
+                        onclick="toBattle(3)">
+                    <img draggable="false" class="icon p-1" src="./Assets/Info-Cards/flee.png" alt=""
+                        onclick="toBattle(2)">
                 </div>
             </div>
             <div class="shop row justify-content-end mt-4 mx-1 mb-3 text-warning text-center">
@@ -140,205 +178,16 @@
         <!-- #endregion SECTION -->
 
         <!-- #region BOSSES SECTION -->
-        <section id="boss-1" class="container card shadow bg-boss-1 section-border h-100 p-3 hidden">
-            <div class="row justify-content-around  align-items-center m-3">
-                <div class="col-5 bg-dark card shadow text-warning text-center">
-                    <h3 class="py-2"><u>Adventurer</u></h3>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card bg-success">HEALTH BAR</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 bg-transparent text-light text-center">
-                    <p>WIN ? LOSS</p>
-                </div>
-                <div class="col-5 bg-dark card shadow text-warning text-center">
-                    <h3 class="py-2"><u>The Orc King</u></h3>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card bg-success">HEALTH BAR</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-around m-3">
-                <div class="col-5">
-                    <div class="row justify-content-around">
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Weapons/sword-1.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Armor/armor-1.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Food/food-1.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Minions/minion-1-card.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 bg-transparent">
-                </div>
-                <div class="col-5">
-                    <div class="row justify-content-around">
-                        <div class="col-8">
-                            <button class="bg-warning text-dark pl-2 pt-2 mt-2">
-                                <h1><strong>ATTACK</strong></h1>
-                            </button>
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Info-Cards/info.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row justify-content-around m-4">
-                <div class="col-4 bg-transparent mx-2">
-                    <img class="pb-3 battle-card" src="./Assets/Characters/player-1.png" alt="">
-                </div>
-                <div class="col-2 bg-transparent text-light text-center">
-                    <p>BATTLE STATS</p>
-                </div>
-                <div class="col-4 bg-transparent mx-2">
-                    <img class="pb-3 battle-card" src="./Assets/Characters/boss-1.png" alt="">
-                </div>
-            </div>
+        <section id="boss-0" class="battle container card shadow bg-boss-0 section-border h-100 p-3 hidden">
         </section>
 
-        <section id="boss-2" class="container card shadow bg-boss-2 section-border h-100 p-3 hidden">
-            <div class="row justify-content-around  align-items-center m-3">
-                <div class="col-5 bg-dark card shadow text-warning text-center">
-                    <h3 class="py-2"><u>Adventurer</u></h3>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card bg-success">HEALTH BAR</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 bg-transparent text-light text-center">
-                    <p>WIN ? LOSS</p>
-                </div>
-                <div class="col-5 bg-dark card shadow text-warning text-center">
-                    <h3 class="py-2"><u>Wax Effigy</u></h3>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card bg-success">HEALTH BAR</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-around m-3">
-                <div class="col-5">
-                    <div class="row justify-content-around">
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Weapons/sword-2.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Armor/armor-2.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Food/food-2.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Minions/minion-2-card.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 bg-transparent">
-                </div>
-                <div class="col-5">
-                    <div class="row justify-content-around">
-                        <div class="col-8">
-                            <button class="bg-warning text-dark pl-2 pt-2 mt-2">
-                                <h1><strong>ATTACK</strong></h1>
-                            </button>
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Info-Cards/info.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row justify-content-around m-4">
-                <div class="col-4 bg-transparent mx-2">
-                    <img class="pb-3 battle-card" src="./Assets/Characters/player-2.png" alt="">
-                </div>
-                <div class="col-2 bg-transparent text-light text-center">
-                    <p>BATTLE STATS</p>
-                </div>
-                <div class="col-4 bg-transparent mx-2">
-                    <img class="pb-3 battle-card" src="./Assets/Characters/boss-2.png" alt="">
-                </div>
-            </div>
+        <section id="boss-1" class="battle container card shadow bg-boss-1 section-border h-100 p-3 hidden">
         </section>
 
-        <section id="boss-3" class="container card shadow bg-boss-3 section-border h-100 p-3 hidden">
-            <div class="row justify-content-around  align-items-center m-3">
-                <div class="col-5 bg-dark card shadow text-warning text-center">
-                    <h3 class="py-2"><u>Adventurer</u></h3>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card bg-success">HEALTH BAR</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 bg-transparent text-light text-center">
-                    <p>WIN ? LOSS</p>
-                </div>
-                <div class="col-5 bg-dark card shadow text-warning text-center">
-                    <h3 class="py-2"><u>Aberration</u></h3>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card bg-success">HEALTH BAR</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-around m-3">
-                <div class="col-5">
-                    <div class="row justify-content-around">
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Weapons/sword-3.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Armor/armor-3.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Food/food-3.png" alt="">
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Minions/minion-3-card.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 bg-transparent">
-                </div>
-                <div class="col-5">
-                    <div class="row justify-content-around">
-                        <div class="col-8">
-                            <button class="bg-warning text-dark pl-2 pt-2 mt-2">
-                                <h1><strong>ATTACK</strong></h1>
-                            </button>
-                        </div>
-                        <div class="col-3">
-                            <img class="buff" src="./Assets/Info-Cards/info.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row justify-content-around m-4">
-                <div class="col-4 bg-transparent mx-2">
-                    <img class="pb-3 battle-card" src="./Assets/Characters/player-3.png" alt="">
-                </div>
-                <div class="col-2 bg-transparent text-light text-center">
-                    <p>BATTLE STATS</p>
-                </div>
-                <div class="col-4 bg-transparent mx-2">
-                    <img class="pb-3 battle-card" src="./Assets/Characters/boss-3.png" alt="">
-                </div>
-            </div>
+        <section id="boss-2" class="battle container card shadow bg-boss-2 section-border h-100 p-3 hidden">
+        </section>
+
+        <section id="boss-3" class="battle container card shadow bg-boss-3 section-border h-100 p-3 hidden">
         </section>
         <!-- #endregion SECTION -->
     </main>
@@ -347,9 +196,7 @@
         <!-- STATS BAR SECTION -->
         <div class="row justify-content-center pt-1">
             <div class="col">
-                <h5 id="stats" class="text-secondary text-center hidden">
-                    <u>Gold</u>: `${player.gold}` || <u>Level</u>: `${player.level}`
-                </h5>
+                <h5 id="stats" class="text-secondary text-center hidden"> </h5>
             </div>
         </div>
         <!-- WELCOME MESSAGE SECTION -->
@@ -362,7 +209,7 @@
         </div>
     </footer>
 
-
+    <audio src="./Assets/Music/fantasy-dragon.mp3" autoplay loop></audio>
     <script src="app.js"></script>
 </body>
 
