@@ -4,37 +4,37 @@ let weapons = [
     {
         name: 'Bare Hands',
         atk: 5,
-        img: "./Assets/Weapons/sword-0.png",
+        img: "./assets/weapons/sword-0.png",
         gold: 0,
-        shop: "./Assets/Info-Cards/template.png"
+        shop: "./assets/info-cards/template.png"
     },
     {
         name: 'Rusty Sword',
         atk: 15,
-        img: "./Assets/Weapons/sword-1.png",
+        img: "./assets/weapons/sword-1.png",
         gold: 50,
-        shop: "./Assets/Money/money-1.png"
+        shop: "./assets/money/money-1.png"
     },
     {
         name: 'Shiny Cutlass',
         atk: 25,
-        img: "./Assets/Weapons/sword-2.png",
+        img: "./assets/weapons/sword-2.png",
         gold: 150,
-        shop: "./Assets/Money/money-2.png"
+        shop: "./assets/money/money-2.png"
     },
     {
         name: 'Jeweled Sword',
         atk: 50,
-        img: "./Assets/Weapons/sword-3.png",
+        img: "./assets/weapons/sword-3.png",
         gold: 300,
-        shop: "./Assets/Money/money-3.png"
+        shop: "./assets/money/money-3.png"
     },
     {
         name: "SOLD OUT",
         atk: 50,
         gold: 0,
-        img: "./Assets/Info-Cards/max.png",
-        shop: "./Assets/Info-Cards/sold-out.png"
+        img: "./assets/info-cards/max.png",
+        shop: "./assets/info-cards/sold-out.png"
     }
 ]
 
@@ -42,41 +42,41 @@ let armor = [
     {
         name: 'Nude',
         hp: 100,
-        img: "./Assets/Armor/armor-0.png",
-        sprite: "./Assets/Characters/player-0.png",
+        img: "./assets/armor/armor-0.png",
+        sprite: "./assets/characters/player-0.png",
         gold: 0,
-        shop: "./Assets/Info-Cards/template.png"
+        shop: "./assets/info-cards/template.png"
     },
     {
         name: 'Leather Armor',
         hp: 150,
-        img: "./Assets/Armor/armor-1.png",
-        sprite: "./Assets/Characters/player-1.png",
+        img: "./assets/armor/armor-1.png",
+        sprite: "./assets/characters/player-1.png",
         gold: 50,
-        shop: "./Assets/Money/money-1.png"
+        shop: "./assets/money/money-1.png"
     },
     {
         name: 'Steel Plate',
         hp: 200,
-        img: "./Assets/Armor/armor-2.png",
-        sprite: "./Assets/Characters/player-2.png",
+        img: "./assets/armor/armor-2.png",
+        sprite: "./assets/characters/player-2.png",
         gold: 150,
-        shop: "./Assets/Money/money-2.png"
+        shop: "./assets/money/money-2.png"
     },
     {
         name: "Giant's Belt",
         hp: 250,
-        img: "./Assets/Armor/armor-3.png",
-        sprite: "./Assets/Characters/player-3.png",
+        img: "./assets/armor/armor-3.png",
+        sprite: "./assets/characters/player-3.png",
         gold: 300,
-        shop: "./Assets/Money/money-3.png"
+        shop: "./assets/money/money-3.png"
     },
     {
         name: "SOLD OUT",
         hp: 250,
         gold: 0,
-        img: "./Assets/Info-Cards/max.png",
-        shop: "./Assets/Info-Cards/sold-out.png"
+        img: "./assets/info-cards/max.png",
+        shop: "./assets/info-cards/sold-out.png"
     }
 ]
 
@@ -84,37 +84,37 @@ let food = [
     {
         name: 'Fish Bones',
         crit: .01,
-        img: "./Assets/Food/food-0.png",
+        img: "./assets/food/food-0.png",
         gold: 0,
-        shop: "./Assets/Info-Cards/template.png"
+        shop: "./assets/info-cards/template.png"
     },
     {
         name: 'Raw Carrot',
         crit: .1,
-        img: "./Assets/Food/food-1.png",
+        img: "./assets/food/food-1.png",
         gold: 50,
-        shop: "./Assets/Money/money-1.png"
+        shop: "./assets/money/money-1.png"
     },
     {
         name: 'Fresh Bread',
         crit: .2,
-        img: "./Assets/Food/food-2.png",
+        img: "./assets/food/food-2.png",
         gold: 150,
-        shop: "./Assets/Money/money-2.png"
+        shop: "./assets/money/money-2.png"
     },
     {
         name: 'Roast Mutton',
         crit: .3,
-        img: "./Assets/Food/food-3.png",
+        img: "./assets/food/food-3.png",
         gold: 300,
-        shop: "./Assets/Money/money-3.png"
+        shop: "./assets/money/money-3.png"
     },
     {
         name: "SOLD OUT",
         crit: .3,
         gold: 0,
-        img: "./Assets/Info-Cards/max.png",
-        shop: "./Assets/Info-Cards/sold-out.png"
+        img: "./assets/info-cards/max.png",
+        shop: "./assets/info-cards/sold-out.png"
     }
 ]
 
@@ -122,37 +122,37 @@ let minions = [
     {
         name: 'The Lone Wolf',
         passive: 0,
-        img: "./Assets/Info-Cards/template.png",
+        img: "./assets/info-cards/template.png",
         gold: 0,
-        shop: "./Assets/Info-Cards/template.png"
+        shop: "./assets/info-cards/template.png"
     },
     {
         name: 'Tiny Minion',
         passive: 10,
-        img: "./Assets/Minions/minion-1-card.png",
+        img: "./assets/minions/minion-1-card.png",
         gold: 50,
-        shop: "./Assets/Money/money-1.png"
+        shop: "./assets/money/money-1.png"
     },
     {
         name: 'Hardy Minion',
         passive: 25,
-        img: "./Assets/Minions/minion-2-card.png",
+        img: "./assets/minions/minion-2-card.png",
         gold: 150,
-        shop: "./Assets/Money/money-2.png"
+        shop: "./assets/money/money-2.png"
     },
     {
         name: 'Mighty Minion',
         passive: 50,
-        img: "./Assets/Minions/minion-3-card.png",
+        img: "./assets/minions/minion-3-card.png",
         gold: 300,
-        shop: "./Assets/Money/money-3.png"
+        shop: "./assets/money/money-3.png"
     },
     {
         name: "SOLD OUT",
         passive: 50,
         gold: 0,
-        img: "./Assets/Info-Cards/max.png",
-        shop: "./Assets/Info-Cards/sold-out.png"
+        img: "./assets/info-cards/max.png",
+        shop: "./assets/info-cards/sold-out.png"
     }
 ]
 
@@ -164,12 +164,12 @@ let bosses = [
         crit: .01,
         miss: .01,
         passive: 0,
-        img: "./Assets/Characters/boss-0.png",
+        img: "./assets/characters/boss-0.png",
         loot: 0,
         gold: 50,
         lootName: "Strong Drink",
-        lootImg: "./Assets/Loot/loot-0.png",
-        winImg: "./Assets/Win-Lose/win-0.png"
+        lootImg: "./assets/loot/loot-0.png",
+        winImg: "./assets/win-lose/win-0.png"
     },
     {
         name: 'The Orc King',
@@ -178,12 +178,12 @@ let bosses = [
         crit: .01,
         miss: .33,
         passive: 0,
-        img: "./Assets/Characters/boss-1.png",
+        img: "./assets/characters/boss-1.png",
         loot: 20,
         gold: 100,
         lootName: "Orc Tusk",
-        lootImg: "./Assets/Loot/loot-1.png",
-        winImg: "./Assets/Win-Lose/win-1.png"
+        lootImg: "./assets/loot/loot-1.png",
+        winImg: "./assets/win-lose/win-1.png"
     },
     {
         name: 'Wax Effigy',
@@ -192,12 +192,12 @@ let bosses = [
         crit: .33,
         miss: .01,
         passive: 0,
-        img: "./Assets/Characters/boss-2.png",
+        img: "./assets/characters/boss-2.png",
         loot: 50,
         gold: 250,
         lootName: "Wax Chunk",
-        lootImg: "./Assets/Loot/loot-2.png",
-        winImg: "./Assets/Win-Lose/win-2.png"
+        lootImg: "./assets/loot/loot-2.png",
+        winImg: "./assets/win-lose/win-2.png"
     },
     {
         name: 'Aberration',
@@ -206,12 +206,12 @@ let bosses = [
         crit: .01,
         miss: .01,
         passive: 15,
-        img: "./Assets/Characters/boss-3.png",
+        img: "./assets/characters/boss-3.png",
         loot: 100,
         gold: 500,
         lootName: "Eerie Ash",
-        lootImg: "./Assets/Loot/loot-3.png",
-        winImg: "./Assets/Win-Lose/win-3.png"
+        lootImg: "./assets/loot/loot-3.png",
+        winImg: "./assets/win-lose/win-3.png"
     }
 ]
 
@@ -722,28 +722,28 @@ function critOrMiss() {
     atkMod()
     if (random <= `${player.crit}`) {
         playerAtk *= 2
-        fightStatus = "./Assets/Info-Cards/you-crit.png"
+        fightStatus = "./assets/info-cards/you-crit.png"
         fightMessage = "You Crit!"
         fightColor = 'bg-success'
     }
     atkMod()
     if (random <= `${boss.crit}`) {
         bossAtk *= 2
-        fightStatus = "./Assets/Info-Cards/crit.png"
+        fightStatus = "./assets/info-cards/crit.png"
         fightMessage = "Boss Crit!"
         fightColor = 'bg-danger'
     }
     atkMod()
     if (random <= `${player.miss}`) {
         playerAtk *= 0
-        fightStatus = "./Assets/Info-Cards/you-miss.png"
+        fightStatus = "./assets/info-cards/you-miss.png"
         fightMessage = "You Miss!"
         fightColor = 'bg-danger'
     }
     atkMod()
     if (random <= `${boss.miss}`) {
         bossAtk *= 0
-        fightStatus = "./Assets/Info-Cards/miss.png"
+        fightStatus = "./assets/info-cards/miss.png"
         fightMessage = "Boss Miss!"
         fightColor = 'bg-success'
     }
@@ -769,23 +769,23 @@ function ifZero() {
     }
 
     if (playerTempHealth <= 0 && bossTempHealth <= 0) {
-        fightStatus = "./Assets/Info-Cards/battle.png"
-        lootImg = "./Assets/Win-Lose/draw.png"
+        fightStatus = "./assets/info-cards/battle.png"
+        lootImg = "./assets/win-lose/draw.png"
         lootColor = 'bg-light'
         lootMessage = "So close!"
         fightMessage = "DRAW!"
         fightColor = 'bg-light'
         onClick = `onclick = "retreat((${bossLevel}))"`
     } else if (playerTempHealth <= 0) {
-        fightStatus = "./Assets/Info-Cards/battle.png"
-        lootImg = "./Assets/Win-Lose/lose.png"
+        fightStatus = "./assets/info-cards/battle.png"
+        lootImg = "./assets/win-lose/lose.png"
         lootColor = 'bg-danger'
         lootMessage = "Fly you fool!"
         fightMessage = 'YOU LOSE!'
         fightColor = 'bg-danger'
         onClick = `onclick = "retreat((${bossLevel}))"`
     } else if (bossTempHealth <= 0) {
-        fightStatus = "./Assets/Info-Cards/battle.png"
+        fightStatus = "./assets/info-cards/battle.png"
         lootImg = boss.winImg
         lootColor = 'bg-success'
         lootMessage = "Who's next?!"
