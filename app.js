@@ -120,7 +120,7 @@ let food = [
 
 let minions = [
     {
-        name: 'Lone Wolf',
+        name: 'The Lone Wolf',
         passive: 0,
         img: "./Assets/Info-Cards/template.png",
         gold: 0,
@@ -289,6 +289,11 @@ let onClick = ''
 let fightColor = ''
 let level = ''
 
+let message1 = "Take what you want and go!"
+let message2 = "What may I offer you...?"
+let message3 = "What do you want?!"
+let goldMessage = "You don't have enough gold!"
+
 //#endregion
 
 //#region GAME START SECTION
@@ -364,6 +369,13 @@ function retreat(num) {
     document.getElementById("boss-2").classList.add("hidden")
     document.getElementById("boss-3").classList.add("hidden")
     document.getElementById(`shop-${level}`).classList.remove("hidden")
+    if (num == 1) {
+        document.getElementById("shop-message").innerText = message1
+    } else if (num == 2) {
+        document.getElementById("shop-message").innerText = message2
+    } else if (num == 3) {
+        document.getElementById("shop-message").innerText = message3
+    }
     drawShop()
 }
 
@@ -386,6 +398,13 @@ function newShop(num) {
         document.getElementById("boss-3").classList.add("hidden")
         document.getElementById("win-game").classList.remove("hidden")
         youWin()
+    }
+    if (num == 0) {
+        document.getElementById("shop-message").innerText = message1
+    } else if (num == 1) {
+        document.getElementById("shop-message").innerText = message2
+    } else if (num == 2) {
+        document.getElementById("shop-message").innerText = message3
     }
 }
 
@@ -631,7 +650,7 @@ function buyWeapon(num) {
         weaponLevel = num
         playerAtk = weapons[weaponLevel].atk
     } else {
-        document.getElementById("shop-message").innerText = "You don't have enough gold!"
+        document.getElementById("shop-message").innerText = goldMessage
     }
     drawShop()
 }
@@ -643,7 +662,7 @@ function buyArmor(num) {
         playerHealth = armor[armorLevel].health
         playerImg = armor[armorLevel].sprite
     } else {
-        document.getElementById("shop-message").innerText = "You don't have enough gold!"
+        document.getElementById("shop-message").innerText = goldMessage
     }
     drawShop()
 }
@@ -654,7 +673,7 @@ function buyFood(num) {
         foodLevel = num
         playerCrit = food[foodLevel].crit
     } else {
-        document.getElementById("shop-message").innerText = "You don't have enough gold!"
+        document.getElementById("shop-message").innerText = goldMessage
     }
     drawShop()
 }
@@ -665,7 +684,7 @@ function buyMinion(num) {
         minionLevel = num
         playerPassive = minions[minionLevel].passive
     } else {
-        document.getElementById("shop-message").innerText = "You don't have enough gold!"
+        document.getElementById("shop-message").innerText = goldMessage
     }
     drawShop()
 }
@@ -679,7 +698,7 @@ function toBattle(num) {
     bossLevel = num
     drawStats()
     drawBattle()
-    if (player.passive > 0) {
+    if (player.passive > 0 || boss.passive > 0) {
         fightInterval()
     }
 }
