@@ -50,35 +50,35 @@ button {
 }
 
 .bg-main {
-    background: url(./Assets/Backgrounds/main-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/main-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
     overflow: hidden;
 }
 
 .bg-main-0 {
-    background: url(./Assets/Backgrounds/main-1-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/main-1-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
     overflow: hidden;
 }
 
 .bg-main-2 {
-    background: url(./Assets/Backgrounds/main-2-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/main-2-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
     overflow: hidden;
 }
 
 .bg-main-3 {
-    background: url(./Assets/Backgrounds/main-3-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/main-3-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
     overflow: hidden;
 }
 
 .bg-shop-0 {
-    background: url(./Assets/Backgrounds/shop-0-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/shop-0-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -86,7 +86,7 @@ button {
 }
 
 .bg-shop-1 {
-    background: url(./Assets/Backgrounds/shop-1-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/shop-1-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -94,7 +94,7 @@ button {
 }
 
 .bg-shop-2 {
-    background: url(./Assets/Backgrounds/shop-2-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/shop-2-bg.png) no-repeat center center;
     background-size: cover;
     background-position:top;
     height: 100%;
@@ -102,7 +102,7 @@ button {
 }
 
 .bg-shop-3 {
-    background: url(./Assets/Backgrounds/shop-3-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/shop-3-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -110,7 +110,7 @@ button {
 }
 
 .bg-boss-0 {
-    background: url(./Assets/Backgrounds/boss-0-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/boss-0-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -118,7 +118,7 @@ button {
 }
 
 .bg-boss-1 {
-    background: url(./Assets/Backgrounds/boss-1-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/boss-1-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -126,7 +126,7 @@ button {
 }
 
 .bg-boss-2 {
-    background: url(./Assets/Backgrounds/boss-2-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/boss-2-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;
@@ -134,7 +134,7 @@ button {
 }
 
 .bg-boss-3 {
-    background: url(./Assets/Backgrounds/boss-3-bg.png) no-repeat center center;
+    background: url(./assets/backgrounds/boss-3-bg.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     height: 100%;

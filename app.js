@@ -518,16 +518,16 @@ function drawBattle() {
     for (let i = 0; i < battles.length; i++) {
         let battleElement = battles[i]
         let playerBar = 'bg-success'
-        if (playerHealthBar <= 66) {
-            playerBar = 'bg-warning'
-        } else if (playerHealthBar <= 33) {
+        if (playerHealthBar <= 33) {
             playerBar = 'bg-danger'
+        } else if (playerHealthBar <= 66) {
+            playerBar = 'bg-warning'
         }
         let bossBar = 'bg-success'
-        if (bossHealthBar <= 66) {
-            bossBar = 'bg-warning'
-        } else if (bossHealthBar <= 33) {
+        if (bossHealthBar <= 33) {
             bossBar = 'bg-danger'
+        } else if (bossHealthBar <= 66) {
+            bossBar = 'bg-warning'
         }
         let battleTemplate = `
             <div class="row justify-content-around  align-items-center m-3">
