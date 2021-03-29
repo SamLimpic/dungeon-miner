@@ -285,6 +285,9 @@ let random = null
 let fightTimer = null
 let fightStatus = ''
 let fightMessage = ''
+let lootMessage = ''
+let lootImg = ''
+let lootColor = ''
 let onClick = ''
 let fightColor = ''
 let level = ''
@@ -354,6 +357,10 @@ function startBattle(num) {
     level = num
     fightStatus = ''
     fightMessage = ''
+    fightColor = ''
+    lootImg = ''
+    lootMessage = ''
+    lootColor = ''
     document.getElementById("shop-1").classList.add("hidden")
     document.getElementById("shop-2").classList.add("hidden")
     document.getElementById("shop-3").classList.add("hidden")
@@ -364,6 +371,10 @@ function retreat(num) {
     level = num
     fightStatus = ''
     fightMessage = ''
+    fightColor = ''
+    lootImg = ''
+    lootMessage = ''
+    lootColor = ''
     document.getElementById("boss-0").classList.add("hidden")
     document.getElementById("boss-1").classList.add("hidden")
     document.getElementById("boss-2").classList.add("hidden")
@@ -529,7 +540,7 @@ function drawBattle() {
                     </div>
                 </div>
                 <div class="col-2 bg-transparent text-light text-center">
-                    <img draggable="false" class="icon" src="${fightStatus}" alt="" ${onClick}>
+                    <img draggable="false" class="icon" src="${fightStatus}" alt="">
                 </div>
                 <div class="col-5 bg-dark card shadow text-warning text-center">
                     <h3 class="py-2"><u>${boss.name}</u></h3>
@@ -558,7 +569,7 @@ function drawBattle() {
                     </div>
                 </div>
                 <div class="col-2 bg-transparent">
-                <h4 class="${fightColor} text-center">${fightMessage}</h4>
+                <h4 class="${fightColor} text-center py-1">${fightMessage}</h4>
                 </div>
                 <div class="col-5">
                     <div class="row justify-content-around">
@@ -567,9 +578,6 @@ function drawBattle() {
                                 <h1 onclick="fight()"><strong>ATTACK</strong></h1>
                             </button>
                         </div>
-                        <div class="col-3">
-                            <img draggable="false" class="buff info" src="./Assets/Info-Cards/info.png" alt="">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -577,7 +585,10 @@ function drawBattle() {
                 <div class="col-4 bg-transparent mx-2">
                     <img draggable="false" class="pb-3 battle-card" src="${player.img}" alt="">
                 </div>
-                <div class="col-2 bg-transparent text-light text-center"></div>
+                <div class="col-3 bg-transparent text-center" ${onClick}>
+                    <img draggable="false" class="icon my-4" src="${lootImg}" alt="">
+                    <h4 class="py-2 px-0 text-center ${lootColor}">${lootMessage}</h4>
+                </div>
                 <div class="col-4 bg-transparent mx-2">
                     <img draggable="false" class="pb-3 battle-card" src="${boss.img}" alt="">
                 </div>
@@ -711,53 +722,73 @@ function critOrMiss() {
     atkMod()
     if (random <= `${player.crit}`) {
         playerAtk *= 2
+        fightStatus = "./Assets/Info-Cards/you-crit.png"
+        fightMessage = "You Crit!"
+        fightColor = 'bg-success'
     }
     atkMod()
     if (random <= `${boss.crit}`) {
         bossAtk *= 2
+        fightStatus = "./Assets/Info-Cards/crit.png"
+        fightMessage = "Boss Crit!"
+        fightColor = 'bg-danger'
     }
     atkMod()
     if (random <= `${player.miss}`) {
         playerAtk *= 0
+        fightStatus = "./Assets/Info-Cards/you-miss.png"
+        fightMessage = "You Miss!"
+        fightColor = 'bg-danger'
     }
     atkMod()
     if (random <= `${boss.miss}`) {
         bossAtk *= 0
+        fightStatus = "./Assets/Info-Cards/miss.png"
+        fightMessage = "Boss Miss!"
+        fightColor = 'bg-success'
     }
     atkMod()
-    if (random <= .2) {
-        fightStatus = boss.lootImg
-        fightMessage = `${bossLootName}!`
-        fightColor = 'bg-warning'
+    if (random <= .33) {
+        lootColor = 'bg-warning'
+        lootImg = boss.lootImg
+        lootMessage = `Dropped ${bossLootName}!`
         playerGold += boss.loot
         totalGold += boss.loot
     }
+
 }
 
 function ifZero() {
     if (playerTempHealth <= 0 || playerHealthBar <= 0) {
         playerTempHealth = 0
         playerHealthBar = 0
-        fightStatus = "./Assets/Win-Lose/lose.png"
     }
     if (bossTempHealth <= 0 || bossHealthBar <= 0) {
         bossTempHealth = 0
         bossHealthBar = 0
-
     }
 
     if (playerTempHealth <= 0 && bossTempHealth <= 0) {
-        fightStatus = "./Assets/Win-Lose/draw.png"
+        fightStatus = "./Assets/Info-Cards/battle.png"
+        lootImg = "./Assets/Win-Lose/draw.png"
+        lootColor = 'bg-light'
+        lootMessage = "So close!"
         fightMessage = "DRAW!"
         fightColor = 'bg-light'
         onClick = `onclick = "retreat((${bossLevel}))"`
     } else if (playerTempHealth <= 0) {
-        fightStatus = "./Assets/Win-Lose/lose.png"
+        fightStatus = "./Assets/Info-Cards/battle.png"
+        lootImg = "./Assets/Win-Lose/lose.png"
+        lootColor = 'bg-danger'
+        lootMessage = "Fly you fool!"
         fightMessage = 'YOU LOSE!'
         fightColor = 'bg-danger'
         onClick = `onclick = "retreat((${bossLevel}))"`
     } else if (bossTempHealth <= 0) {
-        fightStatus = boss.winImg
+        fightStatus = "./Assets/Info-Cards/battle.png"
+        lootImg = boss.winImg
+        lootColor = 'bg-success'
+        lootMessage = "Who's next?!"
         fightMessage = 'YOU WIN!'
         fightColor = 'bg-success'
         onClick = `onclick = "newShop((${bossLevel}))"`
@@ -772,6 +803,9 @@ function fight() {
     fightStatus = ''
     fightMessage = ''
     fightColor = ''
+    lootMessage = ''
+    lootImg = ''
+    lootColor = ''
     if (playerTempHealth <= 0 || bossTempHealth <= 0) {
         clearInterval(fightTimer)
     } else {
